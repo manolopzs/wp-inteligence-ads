@@ -95,8 +95,8 @@ export default function AppShell({ children, isAdmin }: { children: React.ReactN
           <div className="flex items-stretch gap-0">
             {/* Logo */}
             <Link href="/dashboard" className="flex items-center gap-2.5 pr-5 mr-2 shrink-0 group">
-              <div className="w-7 h-7 rounded-lg flex items-center justify-center shadow-sm" style={{ background: '#ff3838' }}>
-                <RacconMark size={16} className="text-white" />
+              <div className="w-7 h-7 rounded-lg flex items-center justify-center shadow-sm bg-white border border-zinc-200 dark:border-zinc-700 dark:bg-zinc-900">
+                <RacconMark size={16} className="text-zinc-900 dark:text-zinc-100" />
               </div>
               <span className="text-[14px] font-bold tracking-tight text-zinc-900 dark:text-zinc-100 group-hover:text-[#ff3838] transition-colors">
                 Whitepaper
