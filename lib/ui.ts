@@ -1,9 +1,9 @@
 // Shared UI utilities — used across AdCard, AdDetail, Analysis, etc.
 
 const BRAND_COLORS = [
-  '#60a5fa','#34d399','#a78bfa','#fb923c','#f87171',
-  '#fbbf24','#2dd4bf','#818cf8','#f472b6','#22d3ee',
-  '#4ade80','#e879f9',
+  '#60a5fa','#34d399','#fb923c','#f87171',
+  '#fbbf24','#2dd4bf','#f472b6','#22d3ee',
+  '#4ade80','#ff3838',
 ]
 
 export function brandColor(name: string): string {

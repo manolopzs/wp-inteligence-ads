@@ -386,7 +386,7 @@ export default function AnalysisPage() {
                         {humanize(hook)}
                       </span>
                       <span className="text-[11px] text-zinc-400">+</span>
-                      <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-violet-50 dark:bg-violet-900/20 text-violet-700 dark:text-violet-300 capitalize shrink-0">
+                      <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300 capitalize shrink-0">
                         {humanize(angle)}
                       </span>
                     </div>
@@ -437,7 +437,7 @@ export default function AnalysisPage() {
             <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm">
               <div className="px-5 pt-4 pb-3 border-b border-zinc-100 dark:border-zinc-800/60">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-violet-500" />
+                  <span className="w-2 h-2 rounded-full bg-[#ff3838]" />
                   <span className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Category Gaps</span>
                 </div>
                 <p className="text-[11px] text-zinc-400 mt-0.5 ml-4">

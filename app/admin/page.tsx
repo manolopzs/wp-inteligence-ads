@@ -116,14 +116,14 @@ export default function AdminPage() {
         </div>
 
         {/* Invite code banner */}
-        <div className="bg-violet-50 dark:bg-violet-900/20 border border-violet-200 dark:border-violet-800/50 rounded-xl px-5 py-3 flex items-center justify-between gap-4">
+        <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800/50 rounded-xl px-5 py-3 flex items-center justify-between gap-4">
           <div>
-            <p className="text-[11px] font-mono text-violet-500 dark:text-violet-400 uppercase tracking-wider mb-0.5">Beta invite code</p>
-            <p className="text-sm font-mono font-semibold text-violet-800 dark:text-violet-200">
-              {process.env.NODE_ENV === 'development' ? 'raccon-beta-2026' : '(check Vercel env: SIGNUP_INVITE_CODE)'}
+            <p className="text-[11px] font-mono text-red-500 dark:text-red-400 uppercase tracking-wider mb-0.5">Beta invite code</p>
+            <p className="text-sm font-mono font-semibold text-red-800 dark:text-red-200">
+              {process.env.NODE_ENV === 'development' ? 'wp-beta-2026' : '(check Vercel env: SIGNUP_INVITE_CODE)'}
             </p>
           </div>
-          <p className="text-[11px] text-violet-500 dark:text-violet-400 text-right leading-snug max-w-xs">
+          <p className="text-[11px] text-red-500 dark:text-red-400 text-right leading-snug max-w-xs">
             Share this with users to allow signup. Change <code className="font-mono">SIGNUP_INVITE_CODE</code> in Vercel to rotate it.
           </p>
         </div>

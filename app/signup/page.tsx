@@ -40,8 +40,8 @@ function SignupForm() {
     border: '1px solid rgba(255,255,255,0.09)',
   }
   const focusStyle = {
-    border: '1px solid rgba(124,58,237,0.6)',
-    boxShadow: '0 0 0 3px rgba(124,58,237,0.1)',
+    border: '1px solid rgba(255,56,56,0.6)',
+    boxShadow: '0 0 0 3px rgba(255,56,56,0.1)',
   }
   const blurStyle = {
     border: '1px solid rgba(255,255,255,0.09)',
@@ -78,13 +78,13 @@ function SignupForm() {
 
       {/* Top bar */}
       <div className="flex items-center justify-between px-8 py-6">
-        <Link href="/landing" className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+        <Link href="/login" className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
           <RacconMark size={24} />
-          <span className="text-[14px] font-bold text-white tracking-tight">Raccon</span>
+          <span className="text-[14px] font-bold text-white tracking-tight">Whitepaper</span>
         </Link>
         <p className="text-[13px]" style={{ color: 'rgba(113,113,122,0.9)' }}>
           Already have an account?{' '}
-          <Link href="/login" className="text-white hover:text-violet-300 transition-colors font-medium">
+          <Link href="/login" className="text-white hover:text-[#ff6060] transition-colors font-medium">
             Sign in
           </Link>
         </p>
@@ -143,7 +143,7 @@ function SignupForm() {
               <label className="block text-[12px] font-medium" style={{ color: 'rgba(161,161,170,0.9)' }}>Invite code</label>
               <input
                 type="text" value={inviteCode} onChange={e => setInviteCode(e.target.value)}
-                required autoComplete="off" placeholder="raccon-beta-XXXX"
+                required autoComplete="off" placeholder="wp-beta-XXXX"
                 className="w-full h-10 rounded-lg px-3.5 text-[14px] text-white placeholder:text-zinc-700 focus:outline-none transition-all"
                 style={inputStyle}
                 onFocus={e => Object.assign(e.currentTarget.style, focusStyle)}
@@ -160,8 +160,8 @@ function SignupForm() {
               disabled={loading}
               className="w-full h-10 rounded-lg text-[14px] font-semibold text-white transition-all duration-150 flex items-center justify-center gap-2 mt-1 disabled:opacity-50"
               style={{
-                background: 'linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%)',
-                boxShadow: '0 1px 20px rgba(124,58,237,0.35)',
+                background: 'linear-gradient(135deg, #ff3838 0%, #cc2020 100%)',
+                boxShadow: '0 1px 20px rgba(255,56,56,0.35)',
               }}
             >
               {loading ? (

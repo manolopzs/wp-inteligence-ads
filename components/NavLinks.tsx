@@ -63,16 +63,16 @@ export default function NavLinks({ isAdmin }: { isAdmin?: boolean }) {
             href={href}
             className={`relative flex items-center gap-2 px-3.5 text-[13px] font-medium transition-all duration-150 ${
               active
-                ? 'text-violet-700 dark:text-violet-300'
+                ? 'text-[#ff3838] dark:text-[#ff5555]'
                 : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100'
             }`}
           >
-            <span className={`transition-colors ${active ? 'text-violet-600 dark:text-violet-400' : 'text-zinc-400 dark:text-zinc-600'}`}>
+            <span className={`transition-colors ${active ? 'text-[#ff3838] dark:text-[#ff5555]' : 'text-zinc-400 dark:text-zinc-600'}`}>
               {icon}
             </span>
             {label}
             {active && (
-              <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-violet-600 dark:bg-violet-400 rounded-t-full" />
+              <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#ff3838] dark:bg-[#ff5555] rounded-t-full" />
             )}
           </Link>
         )

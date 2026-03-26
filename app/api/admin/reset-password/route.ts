@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
 
     // Generate a readable temp password: e.g. "Raccon-a3f7b2"
     const suffix = randomBytes(3).toString('hex')
-    const tempPassword = `Raccon-${suffix}`
+    const tempPassword = `WP-${suffix}`
 
     await getUsersTable().update(id, {
       [USERS_FIELDS.password_hash]: hashPassword(tempPassword),

@@ -41,13 +41,13 @@ function LoginForm() {
 
       {/* Top bar */}
       <div className="flex items-center justify-between px-8 py-6">
-        <Link href="/landing" className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+        <Link href="/login" className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
           <RacconMark size={24} />
-          <span className="text-[14px] font-bold text-white tracking-tight">Raccon</span>
+          <span className="text-[14px] font-bold text-white tracking-tight">Whitepaper</span>
         </Link>
         <p className="text-[13px]" style={{ color: 'rgba(113,113,122,0.9)' }}>
           No account?{' '}
-          <Link href="/signup" className="text-white hover:text-violet-300 transition-colors font-medium">
+          <Link href="/signup" className="text-white hover:text-[#ff6060] transition-colors font-medium">
             Sign up
           </Link>
         </p>
@@ -83,8 +83,8 @@ function LoginForm() {
                   border: '1px solid rgba(255,255,255,0.09)',
                 }}
                 onFocus={e => {
-                  e.currentTarget.style.border = '1px solid rgba(124,58,237,0.6)'
-                  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(124,58,237,0.1)'
+                  e.currentTarget.style.border = '1px solid rgba(255,56,56,0.6)'
+                  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(255,56,56,0.1)'
                 }}
                 onBlur={e => {
                   e.currentTarget.style.border = '1px solid rgba(255,255,255,0.09)'
@@ -110,8 +110,8 @@ function LoginForm() {
                   border: '1px solid rgba(255,255,255,0.09)',
                 }}
                 onFocus={e => {
-                  e.currentTarget.style.border = '1px solid rgba(124,58,237,0.6)'
-                  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(124,58,237,0.1)'
+                  e.currentTarget.style.border = '1px solid rgba(255,56,56,0.6)'
+                  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(255,56,56,0.1)'
                 }}
                 onBlur={e => {
                   e.currentTarget.style.border = '1px solid rgba(255,255,255,0.09)'
@@ -129,8 +129,8 @@ function LoginForm() {
               disabled={loading}
               className="w-full h-10 rounded-lg text-[14px] font-semibold text-white transition-all duration-150 flex items-center justify-center gap-2 mt-1 disabled:opacity-50"
               style={{
-                background: 'linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%)',
-                boxShadow: '0 1px 20px rgba(124,58,237,0.35)',
+                background: 'linear-gradient(135deg, #ff3838 0%, #cc2020 100%)',
+                boxShadow: '0 1px 20px rgba(255,56,56,0.35)',
               }}
             >
               {loading ? (

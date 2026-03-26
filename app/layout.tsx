@@ -10,7 +10,7 @@ const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Raccon — Ad Intelligence',
+  title: 'Whitepaper — Ad Intelligence',
   description: 'Competitor ad intelligence for media brands',
 }
 

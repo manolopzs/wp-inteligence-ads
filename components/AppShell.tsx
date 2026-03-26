@@ -34,8 +34,8 @@ function UserMenu() {
         className="flex items-center gap-2.5 pl-2 pr-3 h-8 rounded-lg border border-zinc-200 dark:border-zinc-700/80 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all group"
       >
         {/* Avatar */}
-        <div className="w-5 h-5 rounded-full bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center shrink-0">
-          <span className="text-[9px] font-bold text-white">R</span>
+        <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0" style={{ background: '#ff3838' }}>
+          <span className="text-[9px] font-bold text-white">W</span>
         </div>
         <svg
           viewBox="0 0 16 16"
@@ -50,7 +50,7 @@ function UserMenu() {
         <div className="absolute right-0 top-full mt-2 w-48 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700/80 rounded-xl shadow-lg shadow-zinc-200/50 dark:shadow-zinc-950/50 overflow-hidden z-50">
           <div className="px-3 py-2.5 border-b border-zinc-100 dark:border-zinc-800">
             <p className="text-[11px] text-zinc-400 dark:text-zinc-500 font-mono">Signed in as</p>
-            <p className="text-[13px] font-medium text-zinc-800 dark:text-zinc-200 truncate mt-0.5">Raccon user</p>
+            <p className="text-[13px] font-medium text-zinc-800 dark:text-zinc-200 truncate mt-0.5">Whitepaper user</p>
           </div>
           <div className="p-1">
             <Link
@@ -95,11 +95,11 @@ export default function AppShell({ children, isAdmin }: { children: React.ReactN
           <div className="flex items-stretch gap-0">
             {/* Logo */}
             <Link href="/dashboard" className="flex items-center gap-2.5 pr-5 mr-2 shrink-0 group">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-600 to-indigo-700 flex items-center justify-center shadow-sm">
+              <div className="w-7 h-7 rounded-lg flex items-center justify-center shadow-sm" style={{ background: '#ff3838' }}>
                 <RacconMark size={16} className="text-white" />
               </div>
-              <span className="text-[14px] font-bold tracking-tight text-zinc-900 dark:text-zinc-100 group-hover:text-violet-700 dark:group-hover:text-violet-300 transition-colors">
-                Raccon
+              <span className="text-[14px] font-bold tracking-tight text-zinc-900 dark:text-zinc-100 group-hover:text-[#ff3838] transition-colors">
+                Whitepaper
               </span>
             </Link>
 

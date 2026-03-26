@@ -383,8 +383,9 @@ export default function AdDetail({ params }: { params: Promise<{ id: string }> }
                       className={`w-full text-sm py-2.5 rounded-xl font-medium transition-all disabled:opacity-50 ${
                         briefError
                           ? 'bg-red-50 text-red-600 border border-red-200 dark:bg-red-900/20 dark:text-red-400 dark:border-red-800/50'
-                          : 'bg-violet-600 hover:bg-violet-700 text-white'
+                          : 'hover:opacity-90 text-white'
                       }`}
+                      style={briefError ? undefined : { background: '#ff3838' }}
                     >
                       {generatingBrief ? '⏳ Generating...' : briefError ? '↺ Failed — Retry' : '✦ Generate Creative Brief'}
                     </button>

@@ -18,10 +18,10 @@ export function AuthPanel({ headline, sub, stats }: Props) {
       {/* Background atmosphere */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0" style={{
-          background: 'radial-gradient(ellipse 90% 70% at 25% 55%, rgba(109,40,217,0.2) 0%, transparent 65%)',
+          background: 'radial-gradient(ellipse 90% 70% at 25% 55%, rgba(255,56,56,0.15) 0%, transparent 65%)',
         }} />
         <div className="absolute inset-0" style={{
-          background: 'radial-gradient(ellipse 50% 40% at 75% 80%, rgba(79,70,229,0.1) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse 50% 40% at 75% 80%, rgba(220,20,20,0.08) 0%, transparent 60%)',
         }} />
         {/* Grid */}
         <div className="absolute inset-0" style={{
@@ -36,12 +36,12 @@ export function AuthPanel({ headline, sub, stats }: Props) {
           <div key={size} className="absolute top-1/2 left-[42%] -translate-x-1/2 -translate-y-1/2 rounded-full"
             style={{
               width: size, height: size,
-              border: `1px solid rgba(124,58,237,${0.06 + i * 0.04})`,
+              border: `1px solid rgba(255,56,56,${0.06 + i * 0.04})`,
             }} />
         ))}
         {/* Center glow */}
         <div className="absolute top-1/2 left-[42%] -translate-x-1/2 -translate-y-[58%] w-32 h-32 rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.3) 0%, transparent 70%)' }} />
+          style={{ background: 'radial-gradient(circle, rgba(255,56,56,0.25) 0%, transparent 70%)' }} />
       </div>
 
       {/* Content */}
@@ -49,11 +49,11 @@ export function AuthPanel({ headline, sub, stats }: Props) {
 
         {/* Logo + back link */}
         <div className="flex items-center justify-between">
-          <Link href="/landing" className="flex items-center gap-2.5 group">
+          <Link href="/login" className="flex items-center gap-2.5 group">
             <RacconMark size={28} />
-            <span className="text-[14px] font-bold text-white tracking-tight">Raccon</span>
+            <span className="text-[14px] font-bold text-white tracking-tight">Whitepaper</span>
           </Link>
-          <Link href="/landing"
+          <Link href="/login"
             className="flex items-center gap-1.5 text-[11px] font-mono text-zinc-600 hover:text-zinc-400 transition-colors">
             <svg viewBox="0 0 16 16" fill="none" className="w-3 h-3">
               <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -65,8 +65,8 @@ export function AuthPanel({ headline, sub, stats }: Props) {
         {/* Main copy */}
         <div className="flex-1 flex flex-col justify-center max-w-md space-y-8">
           <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
-            <span className="text-[11px] font-mono text-violet-400 uppercase tracking-widest">Ad Intelligence</span>
+            <div className="w-1.5 h-1.5 rounded-full bg-[#ff3838] animate-pulse" />
+            <span className="text-[11px] font-mono text-[#ff5555] uppercase tracking-widest">Ad Intelligence</span>
           </div>
 
           <div className="space-y-4">
@@ -95,7 +95,7 @@ export function AuthPanel({ headline, sub, stats }: Props) {
               <div key={ad.brand} className="flex items-center gap-3 rounded-xl px-3.5 py-2.5"
                 style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
                 <div className="w-8 h-8 rounded-lg shrink-0"
-                  style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.2), rgba(79,70,229,0.15))' }} />
+                  style={{ background: 'linear-gradient(135deg, rgba(255,56,56,0.15), rgba(220,20,20,0.1))' }} />
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-[11px] font-medium text-zinc-300 truncate">{ad.brand}</span>
@@ -111,7 +111,7 @@ export function AuthPanel({ headline, sub, stats }: Props) {
           </div>
         </div>
 
-        <p className="text-[11px] text-zinc-800">© 2025 Raccon</p>
+        <p className="text-[11px] text-zinc-800">© 2025 Whitepaper</p>
       </div>
     </div>
   )
