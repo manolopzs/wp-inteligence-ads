@@ -11,7 +11,7 @@ export function RacconMark({ size = 40, className = '' }: { size?: number; class
     >
       <path
         d="M4 8L9 24L16 14L23 24L28 8"
-        stroke="#ff3838"
+        stroke="currentColor"
         strokeWidth="3.5"
         strokeLinecap="round"
         strokeLinejoin="round"
