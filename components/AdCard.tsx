@@ -42,7 +42,7 @@ export function AdCard({ ad, onAnalyze, onBookmark }: Props) {
   const isNew = ad.scraped_at ? (Date.now() - new Date(ad.scraped_at).getTime()) < 48 * 60 * 60 * 1000 : false
 
   return (
-    <Link href={`/ads/${ad.id}`} className="block group outline-none focus-visible:ring-2 focus-visible:ring-violet-400 rounded-xl">
+    <Link href={`/ads/${ad.id}`} className="block group outline-none focus-visible:ring-2 focus-visible:ring-[#ff3838] rounded-xl">
       <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-200 flex flex-col h-full">
 
         {/* Thumbnail */}

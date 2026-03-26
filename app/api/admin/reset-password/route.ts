@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
     const { id } = await req.json()
     if (!id) return NextResponse.json({ error: 'id required' }, { status: 400 })
 
-    // Generate a readable temp password: e.g. "Raccon-a3f7b2"
+    // Generate a readable temp password: e.g. "WP-a3f7b2"
     const suffix = randomBytes(3).toString('hex')
     const tempPassword = `WP-${suffix}`
 
