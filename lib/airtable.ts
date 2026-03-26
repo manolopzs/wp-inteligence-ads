@@ -59,7 +59,7 @@ export type Brand = {
   id: string
   name: string
   ad_library_url: string
-  category: 'ecommerce' | 'media' | 'saas' | 'b2b'
+  category: 'us_premium' | 'global_premium' | 'mexico'
   last_scraped: string | null
   active: boolean
 }
@@ -101,7 +101,7 @@ export async function getBrands(): Promise<Brand[]> {
     id: r.id,
     name: (r.get('name') as string) || '',
     ad_library_url: (r.get('ad_library_url') as string) || '',
-    category: (r.get('category') as Brand['category']) || 'media',
+    category: (r.get('category') as Brand['category']) || 'us_premium',
     last_scraped: (r.get('last_scraped') as string) || null,
     active: (r.get('active') as boolean) || false,
   }))

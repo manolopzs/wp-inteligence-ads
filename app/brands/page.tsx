@@ -21,7 +21,7 @@ export default function BrandsPage() {
   const [status, setStatus] = useState<ScrapeStatus>({})
   const [results, setResults] = useState<ScrapeResult>({})
   const [showAdd, setShowAdd] = useState(false)
-  const [form, setForm] = useState({ name: '', ad_library_url: '', category: 'media' })
+  const [form, setForm] = useState({ name: '', ad_library_url: '', category: 'us_premium' })
   const [adding, setAdding] = useState(false)
   const [scrapingAll, setScrapingAll] = useState(false)
 
@@ -165,10 +165,9 @@ export default function BrandsPage() {
                 onChange={(e) => setForm((f) => ({ ...f, category: e.target.value }))}
                 className={inputClass}
               >
-                <option value="ecommerce">Ecommerce</option>
-                <option value="media">Media / Subscription</option>
-                <option value="saas">SaaS</option>
-                <option value="b2b">B2B</option>
+                <option value="us_premium">US Premium</option>
+                <option value="global_premium">Global Premium</option>
+                <option value="mexico">Mexico</option>
               </select>
             </div>
             <button
