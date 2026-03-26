@@ -34,8 +34,8 @@ function UserMenu() {
         className="flex items-center gap-2.5 pl-2 pr-3 h-8 rounded-lg border border-zinc-200 dark:border-zinc-700/80 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all group"
       >
         {/* Avatar */}
-        <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0" style={{ background: '#ff3838' }}>
-          <span className="text-[9px] font-bold text-white">W</span>
+        <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 bg-white border border-zinc-200 dark:border-zinc-600">
+          <span className="text-[9px] font-bold text-zinc-800">W</span>
         </div>
         <svg
           viewBox="0 0 16 16"
