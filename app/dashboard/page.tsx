@@ -88,7 +88,7 @@ export default function Dashboard() {
       if (Array.isArray(filtered)) {
         setAds(filtered)
         const names = [...new Set(filtered.map((a: Ad) => a.brand_name).filter(Boolean))].sort() as string[]
-        if (names.length > brandNames.length) setBrandNames(names)
+        setBrandNames(names)
       }
       if (Array.isArray(all) && allAds.length === 0) setAllAds(all)
     } finally {
@@ -190,12 +190,6 @@ export default function Dashboard() {
     }
   }
 
-  const base = allAds.length > 0 ? allAds : ads
-  const totalAds = base.length
-  const analyzedCount = base.filter(a => a.ai_analyzed).length
-  const analyzedPct = totalAds > 0 ? Math.round((analyzedCount / totalAds) * 100) : 0
-  const topScore = base.reduce((max, a) => Math.max(max, a.whitepaper_overlap_score || 0), 0)
-  const brandCount = new Set(base.map(a => a.brand_name).filter(Boolean)).size
   const unanalyzedCount = ads.filter(a => !a.ai_analyzed || !a.ai_summary).length
 
   const q = search.trim().toLowerCase()
@@ -228,35 +222,9 @@ export default function Dashboard() {
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
       {toast && <Toast message={toast.message} type={toast.type} onDismiss={() => setToast(null)} />}
 
-      {/* Compact top bar — stats + action */}
+      {/* Action bar */}
+      {(!loading && unanalyzedCount > 0) || analyzeState.running || analyzeState.done ? (
       <div className="bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800/80 px-6 py-3 flex items-center gap-4 flex-wrap">
-        {loading ? (
-          <span className="text-sm text-zinc-400 font-mono animate-pulse">Loading ads...</span>
-        ) : (
-          <>
-            <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300 tabular-nums">
-              {sorted.length} <span className="text-zinc-400 font-normal">ads</span>
-              {sorted.length !== totalAds && <span className="text-zinc-400 font-normal"> of {totalAds}</span>}
-            </span>
-            <div className="w-px h-4 bg-zinc-200 dark:bg-zinc-800 shrink-0" />
-            <span className="text-sm text-zinc-400 dark:text-zinc-500 tabular-nums">
-              <span className="font-medium text-zinc-700 dark:text-zinc-300">{brandCount}</span> brands
-            </span>
-            <div className="w-px h-4 bg-zinc-200 dark:bg-zinc-800 shrink-0" />
-            <span className="text-sm text-zinc-400 dark:text-zinc-500 tabular-nums">
-              <span className="font-medium text-zinc-700 dark:text-zinc-300">{analyzedPct}%</span> analyzed
-            </span>
-            {topScore > 0 && (
-              <>
-                <div className="w-px h-4 bg-zinc-200 dark:bg-zinc-800 shrink-0" />
-                <span className="text-sm text-zinc-400 dark:text-zinc-500">
-                  top fit <span className="font-medium text-orange-500">{topScore}/10</span>
-                </span>
-              </>
-            )}
-          </>
-        )}
-
         {!loading && unanalyzedCount > 0 && (
           <button
             onClick={handleAnalyzeAll}
@@ -302,6 +270,7 @@ export default function Dashboard() {
           </div>
         )}
       </div>
+      ) : null}
 
       <FilterBar filters={filters} onChange={setFilters} brandNames={brandNames} search={search} onSearchChange={setSearch} />
 
