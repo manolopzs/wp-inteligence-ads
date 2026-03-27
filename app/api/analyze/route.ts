@@ -66,6 +66,29 @@ Return ONLY a valid JSON object. No markdown. No explanation. No backticks.
 
 function getBrandTypeContext(brandType: string): string {
   switch (brandType) {
+    case 'us_premium':
+    case 'global_premium':
+    case 'mexico':
+    case 'media':
+      return `
+━━━ BRAND TYPE: MEDIA / SUBSCRIPTION ━━━
+This is a subscription media, newsletter, or content brand. Evaluate using media-specific standards:
+
+WHAT WORKS for media/subscription:
+- Content-first creative: the ad feels like editorial content, not an advertisement
+- Free trial or lead magnet offer for cold audiences — "subscribe now" is wrong funnel stage for cold
+- Hook that demonstrates editorial value: a surprising data point, a counterintuitive claim, an exclusive insight
+- Specificity about the audience: "For CMOs who run paid media" beats "For marketers"
+- Social proof: subscriber counts, named publications where coverage appeared, specific reader outcomes
+- The promise of access to information the reader cannot get elsewhere — exclusivity angle
+
+WHAT IS WEAK for media/subscription:
+- "Subscribe now" CTA to cold audiences — they have no relationship with the brand yet
+- Generic "stay informed" or "be ahead of the curve" claims — not specific enough
+- No demonstration of editorial value — reader cannot tell what they would actually get
+- Vague audience definition — reads like it is for everyone, which means no one
+- No social proof or credibility signal`
+
     case 'ecommerce':
       return `
 ━━━ BRAND TYPE: ECOMMERCE ━━━
@@ -129,26 +152,8 @@ WHAT IS WEAK for B2B:
 - Product feature focus without business outcome connection
 - No trust signals — B2B buyers need to feel safe before engaging`
 
-    case 'media':
     default:
-      return `
-━━━ BRAND TYPE: MEDIA / SUBSCRIPTION ━━━
-This is a subscription media, newsletter, or content brand. Evaluate using media-specific standards:
-
-WHAT WORKS for media/subscription:
-- Content-first creative: the ad feels like editorial content, not an advertisement
-- Free trial or lead magnet offer for cold audiences — "subscribe now" is wrong funnel stage for cold
-- Hook that demonstrates editorial value: a surprising data point, a counterintuitive claim, an exclusive insight
-- Specificity about the audience: "For CMOs who run paid media" beats "For marketers"
-- Social proof: subscriber counts, named publications where coverage appeared, specific reader outcomes
-- The promise of access to information the reader cannot get elsewhere — exclusivity angle
-
-WHAT IS WEAK for media/subscription:
-- "Subscribe now" CTA to cold audiences — they have no relationship with the brand yet
-- Generic "stay informed" or "be ahead of the curve" claims — not specific enough
-- No demonstration of editorial value — reader cannot tell what they would actually get
-- Vague audience definition — reads like it is for everyone, which means no one
-- No social proof or credibility signal`
+      return ''
   }
 }
 

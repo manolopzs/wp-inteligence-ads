@@ -118,8 +118,23 @@ export async function getAds(filters?: {
 }): Promise<Ad[]> {
   const formulas: string[] = []
 
-  if (filters?.brand?.length) {
-    const brandFormulas = filters.brand.map((b) => `{brand_name} = '${b}'`)
+  // Resolve category → brand names (Ads table has no category field)
+  let effectiveBrands = filters?.brand ? [...filters.brand] : []
+  if (filters?.category?.length) {
+    const catFormulas = filters.category.map((c) => `{category} = '${c}'`)
+    const catFilter = catFormulas.length === 1 ? catFormulas[0] : `OR(${catFormulas.join(',')})`
+    const brandRecords = await getBrandsTable().select({ filterByFormula: catFilter, fields: ['name'] }).all()
+    const catBrandNames = brandRecords.map(r => (r.get('name') as string)).filter(Boolean)
+    // Intersect with brand filter if both are set; otherwise use category brands
+    if (effectiveBrands.length > 0) {
+      effectiveBrands = effectiveBrands.filter(b => catBrandNames.includes(b))
+    } else {
+      effectiveBrands = catBrandNames
+    }
+  }
+
+  if (effectiveBrands.length) {
+    const brandFormulas = effectiveBrands.map((b) => `{brand_name} = '${b}'`)
     formulas.push(`OR(${brandFormulas.join(',')})`)
   }
   if (filters?.media_type) formulas.push(`{media_type} = '${filters.media_type}'`)
